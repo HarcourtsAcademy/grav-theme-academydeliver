@@ -6,11 +6,7 @@
     <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
     {% include 'partials/metadata.html.twig' %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="shortcut icon" type="image/x-icon" href="{{ theme_url }}/images/icons/favicon.ico">
-    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: --><link rel="apple-touch-icon" href="{{ theme_url }}/images/icons/apple-touch-icon.png">
-    <!-- For first- and second-generation iPad: --><link rel="apple-touch-icon" sizes="72x72" href="{{ theme_url }}/images/icons/apple-touch-icon-72x72.png">
-    <!-- For iPhone with high-resolution Retina display: --><link rel="apple-touch-icon" sizes="114x114" href="{{ theme_url }}/images/icons/apple-touch-icon-114x114.png">
-    <!-- For third-generation iPad with high-resolution Retina display: --><link rel="apple-touch-icon" sizes="144x144" href="{{ theme_url }}/images/icons/apple-touch-icon-144x144.png">
+    <link rel="icon" type="image/ico" href="{{ theme_url }}/images/favicon.ico" />
 
     {% block stylesheets %}
         {% do assets.addCss('theme://css-compiled/nucleus.css',102) %}
@@ -31,7 +27,7 @@
     {{ assets.css() }}
 
     {% block javascripts %}
-        {% do assets.add('jquery', 101) %}
+        {% do assets.addJs('theme://js/jquery-2.1.1.min.js',101) %}
         {% do assets.addJs('theme://js/modernizr.custom.71422.js',100) %}
         {% do assets.addJs('theme://js/deliver.js') %}
         {% do assets.addJs('theme://js/slidebars.min.js') %}
@@ -41,12 +37,12 @@
 
 {% endblock head%}
 </head>
-<body id="top" class="{{ page.header.body_classes }}">
+<body id="top" class="modular header-lite fullwidth">
     <div id="sb-site">
         {% block header %}
         <header id="header">
                 <div class="logo">
-                    <h3><a href="{{ base_url_absolute }}"><img src="{{ url( config.site.logo.url ) }}" class="img-responsive img-centered" alt="{{ config.site.logo.alt }}"></a></h3>
+                    <h3><a href="{{ base_url == '' ? '/' : base_url }}">{{ config.site.title }}</a></h3>
                     {% block social %}
                         {% include 'partials/social.html.twig' %}
                     {% endblock %}
