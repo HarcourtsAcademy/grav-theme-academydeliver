@@ -112,7 +112,7 @@ b, strong, label, th {
     float: right;
     text-align: right; }
     #header .search-box i {
-      color: #FFFFFF;
+      color: #190D00;
       position: absolute;
       top: 0.5rem;
       right: 0.6rem;
@@ -141,9 +141,9 @@ b, strong, label, th {
       transition: all 0.5s; }
       #header .search-box input[type=search]:focus {
         width: 10rem;
-        background-color: rgba(255, 255, 255, 0.3);
+        background-color: rgba(25, 13, 0, 0.3);
         cursor: auto;
-        color: #FFFFFF; }
+        color: #190D00; }
     #header .search-box input:-moz-placeholder {
       color: transparent; }
     #header .search-box input::-webkit-input-placeholder {
@@ -230,14 +230,14 @@ b, strong, label, th {
 .header-image #breadcrumbs {
   margin-top: 1rem; }
 .header-image #header {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(25, 13, 0, 0);
   box-shadow: none; }
   .header-image #header #logo h3, .header-image #header #logo a {
-    color: #FFFFFF; }
+    color: #190D00; }
   .header-image #header a, .header-image #header .menu-btn {
-    color: #FFFFFF; }
+    color: #190D00; }
   .header-image #header a:before, .header-image #header a:after {
-    background-color: rgba(255, 255, 255, 0.7) !important; }
+    background-color: rgba(25, 13, 0, 0.7) !important; }
   .header-image #header #navbar ul.navigation ul li a {
     color: #18B1EE; }
     .header-image #header #navbar ul.navigation ul li a:hover {
@@ -397,10 +397,10 @@ b, strong, label, th {
     height: 2.5rem;
     border: 0 none; }
   .footer .newsletter input[type=text] {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(25, 13, 0, 0.2);
     color: #fff; }
   .footer .newsletter input[type=submit] {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(25, 13, 0, 0.5);
     color: #fff;
     padding: 0 1.2rem;
     vertical-align: top; }
@@ -789,7 +789,7 @@ td {
   .blog-header.blog-header-image {
     background-size: cover !important; }
     .blog-header.blog-header-image h1, .blog-header.blog-header-image h2 {
-      color: #FFFFFF;
+      color: #190D00;
       text-align: left; }
   .blog-header h1 {
     font-size: 2.5rem;
@@ -1017,9 +1017,9 @@ ul.pagination {
   background-color: rgba(255, 255, 255, 0);
   box-shadow: none; }
   .modular.header-image #header #logo h3 {
-    color: #FFFFFF; }
+    color: #190D00; }
   .modular.header-image #header #navbar a {
-    color: #FFFFFF; }
+    color: #190D00; }
 .modular .slideme_container {
   overflow: hidden;
   margin-top: -15rem;
@@ -1037,7 +1037,7 @@ ul.pagination {
   background-size: cover;
   background-position: center;
   text-align: center;
-  color: #FFFFFF; }
+  color: #190D00; }
   .modular .showcase h1 {
     font-size: 2.2rem;
     margin-top: 0;
@@ -1068,11 +1068,11 @@ ul.pagination {
         margin-left: 4rem;
         margin-right: 4rem; } }
   .modular .showcase .button, .modular .showcase .archive-list button, .archive-list .modular .showcase button, .modular .showcase .contact button, .contact .modular .showcase button {
-    color: #FFFFFF;
+    color: #190D00;
     font-family: "novecento_sans_widedemibold", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     padding: 0.3rem 1rem;
     background: rgba(255, 255, 255, 0);
-    border: 2px solid #FFFFFF;
+    border: 2px solid #190D00;
     border-radius: 0;
     box-shadow: none;
     font-size: 1rem; }
@@ -1168,7 +1168,7 @@ ul.pagination {
         font-size: 1rem; } }
   .modular .features .button, .modular .features .archive-list button, .archive-list .modular .features button, .modular .features .contact button, .contact .modular .features button {
     background-color: #18B1EE;
-    color: #FFFFFF;
+    color: #190D00;
     font-family: "novecento_sans_widedemibold", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     border-radius: 0;
     box-shadow: none;
@@ -1241,7 +1241,7 @@ ul.pagination {
         font-size: 1rem; } }
   .modular .bottom .button, .modular .bottom .archive-list button, .archive-list .modular .bottom button, .modular .bottom .contact button, .contact .modular .bottom button {
     background-color: #18B1EE;
-    color: #FFFFFF;
+    color: #190D00;
     font-family: "novecento_sans_widedemibold", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     border-radius: 0;
     box-shadow: none;
