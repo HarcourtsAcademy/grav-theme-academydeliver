@@ -42,7 +42,7 @@
         {% block header %}
         <header id="header">
                 <div class="logo">
-                    <div><a href="{{ base_url_absolute }}"><img src="{{ config.site.logo.image }}" class="img-responsive img-centered" alt="{{ config.site.logo.alt }}"></a></div>
+                    <h3><a href="{{ base_url_absolute }}"><img src="{{ url( config.site.logo.url ) }}" class="img-responsive img-centered" alt="{{ config.site.logo.alt }}"></a></h3>
                     {% block social %}
                         {% include 'partials/social.html.twig' %}
                     {% endblock %}
