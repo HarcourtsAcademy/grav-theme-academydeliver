@@ -1,3 +1,5 @@
+enabled: true
+
 streams:
  schemes:
    theme:
