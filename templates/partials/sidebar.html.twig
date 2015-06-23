@@ -4,7 +4,7 @@
     {% include 'partials/simplesearch_searchbox.html.twig' %}
 </div>
 {% endif %}
-{% if taxonomy.findTaxonomy({'category':'library'}) %}
+{% if 'library' in page.taxonomy.category %}
 <div class="sidebar-content">
      <h4>Visit the Library</h4>
      <ul>
