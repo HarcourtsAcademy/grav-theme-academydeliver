@@ -1,0 +1,78 @@
+{% if config.plugins.simplesearch.enabled %}
+<div class="sidebar-content">
+    <h4>SimpleSearch</h4>
+    {% include 'partials/simplesearch_searchbox.html.twig' %}
+</div>
+{% endif %}
+{% if taxonomy.findTaxonomy({'category':'library'}) %}
+<div class="sidebar-content">
+     <h4>Visit the Library</h4>
+     <ul>
+     {% for country in page.header.documentlibrary %}
+         <li><a href="{{ country.library_url }}">{{ country.country }}</a></li>
+     {% endfor %}
+     </ul>
+
+     <h4>Visit the Media Library</h4>
+     <ul>
+     {% for country in page.header.medialibrary %}
+         <li><a href="{{ country.library_url }}">{{ country.country }}</a></li>
+     {% endfor %}
+     </ul>
+ </div>
+{% endif %}
+{% macro loop(page) %}
+    {% for p in page.children %}
+        {% if p.visible %}
+            {% set current_page = (p.active or p.activeChild) ? 'active' : '' %}
+            <li class="{{ current_page }}">
+                <a href="{{ p.url }}">
+                    {% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
+                    {{ p.menu }}
+                </a>
+                {% if p.children.count > 0 %}
+                    <ul>
+                        {{ _self.loop(p) }}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endif %}
+    {% endfor %}
+{% endmacro %}
+<ul class="navigation">
+    {% for page in page.children %}
+        {% if page.visible %}
+            {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+            <li class="{{ current_page }}">
+                <a href="{{ page.url }}">
+                    {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"></i>{% endif %}
+                    {{ page.menu }}
+                </a>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul> 
+{% if config.plugins.relatedpages.enabled and related_pages|length > 0 %}
+<div class="sidebar-content">
+    <h4>Related Posts</h4>
+    {% include 'partials/relatedpages.html.twig' %}
+</div>
+{% endif %}
+{% if config.plugins.random.enabled %}
+<div class="sidebar-content">
+	<h4>Random Article</h4>
+	<a class="button" href="{{ base_url_relative }}/random"><i class="fa fa-retweet"></i> I'm Feeling Lucky!</a>
+</div>
+{% endif %}
+{% if config.plugins.taxonomylist.enabled %}
+<div class="sidebar-content">
+    <h4>Popular Tags</h4>
+    {% include 'partials/taxonomylist.html.twig' with {'taxonomy':'tag'} %}
+</div>
+{% endif %}
+{% if config.plugins.archives.enabled %}
+<div class="sidebar-content">
+    <h4>Archives</h4>
+	{% include 'partials/archives.html.twig' %}
+</div>
+{% endif %}
