@@ -46,7 +46,13 @@
         {% block header %}
         <header id="header">
                 <div class="logo">
-                    <h3><a href="{{ base_url_absolute }}"><img src="{{ url( config.site.logo.light ) }}" class="img-responsive img-centered" alt="{{ config.site.logo.alt }}"></a></h3>
+                    <h3><a href="{{ base_url_absolute }}">
+                            {% if 'header-image' in page.header.body_classes %}
+                                <img src="{{ url( config.site.logo.light ) }}" class="img-responsive img-centered" alt="{{ config.site.logo.alt }}">
+                            {% else %}
+                                <img src="{{ url( config.site.logo.dark ) }}" class="img-responsive img-centered" alt="{{ config.site.logo.alt }}">
+                            {% endif %}
+                        </a></h3>
                     {% block social %}
                         {% include 'partials/social.html.twig' %}
                     {% endblock %}
