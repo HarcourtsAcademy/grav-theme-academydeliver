@@ -1,0 +1,35 @@
+{% embed 'partials/base.html.twig' %}
+    
+	{% block content %}
+
+        {% if config.plugins.breadcrumbs.enabled %}
+				{% include 'partials/breadcrumbs.html.twig' %}
+        {% endif %}
+
+        <div class="content-wrapper g-grid pure-g-r">
+			<div id="library-content" class="g-block pure-u-2-3">
+                {{ page.content }}
+
+
+			</div>
+			<div id="sidebar" class="g-block size-1-3 pure-u-1-3">
+                <h3>Visit the Document Library</h3>
+                <ul>
+                {% for country in page.header.documentlibrary %}
+                    <li><a href="{{ country.library_url }}">{{ country.country }}</a></li>
+			    {% endfor %}
+                </ul>
+                
+                <h3>Visit the Media Library</h3>
+                <ul>
+				{% for country in page.header.medialibrary %}
+                    <li><a href="{{ country.library_url }}">{{ country.country }}</a></li>
+			    {% endfor %}
+                </ul>
+			</div>
+		</div>
+	{% endblock %}
+
+{% endembed %}
+
+
