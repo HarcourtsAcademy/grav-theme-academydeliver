@@ -129,18 +129,12 @@
                 <td>Elements describe the essential outcomes of a unit of competency.</td>
                 <td>Performance criteria describe the required performance needed to demonstrate achievement of the element. Where bold italicised text is used, further information is detailed in the required skills and knowledge and/or the range statement. Assessment of performance is to be consistent with the evidence guide.</td>
               </tr>
-              {% set element_counter = 1 %}
               {% for element in page.header.performance_criteria %}
               <tr>
-              <td>{{ element_counter }} {{ element.name }}</td>
+              <td>{{ element.name }}</td>
               <td>
-                {% set criteria_counter = 1 %}
-                {% for criteria in element.criteria %}
-                  <p>{{ element_counter }}.{{ criteria_counter }} {{ criteria }}</p>
-                  {% set criteria_counter = criteria_counter + 1 %}
-                {% endfor %}
+                {{ element.criteria|markdown }}
               </tr>
-              {% set element_counter = element_counter + 1 %}
               {% endfor %}
             </table>
             
