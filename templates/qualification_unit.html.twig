@@ -194,6 +194,19 @@
                   {% endfor %}
               </tbody>
             </table>
+          
+            <h2>Evidence Guide</h2>
+            <p>The evidence guide provides advice on assessment and must be read in conjunction with the performance criteria, required skills and knowledge, the range statement and the Assessment Guidelines for this Training Package.</p>
+          
+            <h3>Overview of assessment</h3>
+            <p>{{ page.header.evidence_guide.overview|markdown }}</p>
+          
+            <h3>Critical aspects for assessment and evidence required to demonstrate competency in this unit</h3>
+            <p>{{ page.header.evidence_guide.competency|markdown }}</p>
+          
+            <h3>Context of and specific resources for assessment</h3>
+            <p>{{ page.header.evidence_guide.resources|markdown }}</p>
+            
 
             {% for module in page.collection() %}
                 <div id="{{ _self.pageLinkName(module.menu) }}"></div>
