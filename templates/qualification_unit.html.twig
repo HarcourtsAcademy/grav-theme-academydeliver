@@ -142,6 +142,30 @@
               {% set element_counter = element_counter + 1 %}
               {% endfor %}
             </table>
+            
+            <h2>Required Skills and Knowledge</h2>
+            <p>This section describes the essential skills and knowledge and their level, required for this unit.</p>
+            <p>Required skills:</p>
+            <ul>
+            {% for skill in page.header.required_skills %}
+              <li>{{ skill }}</li>
+            {% endfor %}
+            </ul>
+            
+            <p>Required knowledge and understanding:</p>
+            <ul>
+            {% for knowledge in page.header.required_knowledge %}
+              {% if knowledge is not iterable %}
+                <li>{{ knowledge }}</li>
+              {% else %}
+                <ul>
+                {% for sublist in knowledge.sublist %}
+                  <li>{{ sublist }}</li>
+                {% endfor %}
+                </ul>
+              {% endif %}
+            {% endfor %}
+            </ul>
 
             {% for module in page.collection() %}
                 <div id="{{ _self.pageLinkName(module.menu) }}"></div>
