@@ -120,9 +120,10 @@
             <h2>Unit Sector</h2>
             <p>{{ page.header.qualification_unit.sector }}</p>
             
-            <table>
+            <table class="performance-criteria">
               <tr>
-                <th>Element</th><th>Performance Criteria</th>
+                <th>Element</th>
+                <th>Performance Criteria</th>
               </tr>
               <tr>
                 <td>Elements describe the essential outcomes of a unit of competency.</td>
@@ -146,26 +147,10 @@
             <h2>Required Skills and Knowledge</h2>
             <p>This section describes the essential skills and knowledge and their level, required for this unit.</p>
             <p>Required skills:</p>
-            <ul>
-            {% for skill in page.header.required_skills %}
-              <li>{{ skill }}</li>
-            {% endfor %}
-            </ul>
+            {{ page.header.required_skills|markdown }}
             
             <p>Required knowledge and understanding:</p>
-            <ul>
-            {% for knowledge in page.header.required_knowledge %}
-              {% if knowledge is not iterable %}
-                <li>{{ knowledge }}</li>
-              {% else %}
-                <ul>
-                {% for sublist in knowledge.sublist %}
-                  <li>{{ sublist }}</li>
-                {% endfor %}
-                </ul>
-              {% endif %}
-            {% endfor %}
-            </ul>
+            {{ page.header.required_knowledge|markdown }}
             
             <h2>Range Statement</h2>
             <p>The range statement relates to the unit of competency as a whole. It allows for different work environments and situations that may affect performance. <em><strong>Bold italicised</strong></em> wording in the performance criteria is detailed below. Add any essential operating conditions that may be present with training and assessment depending on the work situation, needs of the candidate, accessibility of the item, and local industry and regional contexts.</p>
@@ -175,20 +160,8 @@
                   {% for statement in page.header.range_statement %}
                   <tr>
                       <td valign="top"><strong><em>{{ statement.name }}</em></strong> may include:</td>
-                      <td valign="top">
-                          <ul>
-                              {% for meaning in statement.meaning %}
-                              {% if meaning is not iterable %}
-                                <li>{{ meaning }}</li>
-                              {% else %}
-                                <ul>
-                                {% for sublist in meaning.sublist %}
-                                  <li>{{ sublist }}</li>
-                                {% endfor %}
-                                </ul>
-                              {% endif %}
-                              {% endfor %}
-                          </ul>
+                      <td valign="top">{{ statement.meaning|markdown }}
+
                       </td>
                   </tr>
                   {% endfor %}
