@@ -4,6 +4,8 @@
 
   {% block content %}
 
+    <h1>{{ page.header.title }}</h1>
+
     {{ page.content }}
 
     {% for post in taxonomy.findTaxonomy({'category':'qualification-type'}) %}
